@@ -32,11 +32,11 @@ def dbconnect():
 def home():
     return """
     <h1> Benvenuto sul sito della nostra agenzia di viaggi!</h1>
-    <p> Voli disponibili : <a href='/api/voli'>/api/voli</a></p>
-    <p> Voli delle rispettive compagnie :<a href = '/api/compagnie_voli'>/api/compagnie_voli</a></p>
-    <p> Aeroporti che effettuano voli :<a href = '/api/aeroporti'>/api/aeroporti</a></p>
-    <p> Aeroporti di partenza e arrivo :<a href = '/api/aeroporti_arr_part'>/api/aeroporti_arr_part</a></p>
-    <p> Luogo degli aeroporti :<a href = '/api/luogo_aeroporti'>/api/luogo_aeroporti</a></p>
+    <p> Voli disponibili : <a href='/api/voli'>clicca qui</a></p>
+    <p> Voli delle rispettive compagnie :<a href = '/api/compagnie_voli'>clicca qui</a></p>
+    <p> Aeroporti che effettuano voli :<a href = '/api/aeroporti'>clicca qui</a></p>
+    <p> Aeroporti di partenza e arrivo :<a href = '/api/aeroporti_arr_part'>clicca qui</a></p>
+    <p> Luogo degli aeroporti :<a href = '/api/luogo_aeroporti'>clicca qui</a></p>
     """
 
 @app.route('/api/voli', methods=['GET'])
@@ -44,11 +44,11 @@ def GestisciVoli():
     try:
         conn = dbconnect()
         cursor = conn.cursor()
-        cursor.execute("SELECT * FROM Volo")
+        cursor.execute("SELECT v.codice, v.comp, v.durataminuti FROM Volo v")
         rows = cursor.fetchall()
         cursor.close()
         conn.close()
-        return jsonify(rows)
+        return rows
     except Exception as e:
         print(f"Problemi di comunicazione con il server {e}")
         return jsonify({"error": "Errore durante la comunicazione con il database", "details": str(e)}), 500
@@ -84,7 +84,7 @@ def GestisciAeroportiPartArr():
     try:
         conn = dbconnect()
         cursor = conn.cursor()
-        cursor.execute("SELECT * FROM Aeroporto ")
+        cursor.execute("SELECT * FROM ArrPart ")
         rows = cursor.fetchall()
         cursor.close()
         conn.close()
@@ -97,7 +97,7 @@ def GestisciLuogoAeroporti():
     try:
         conn = dbconnect()
         cursor = conn.cursor()
-        cursor.execute("SELECT * FROM Aeroporto ")
+        cursor.execute("SELECT * FROM LuogoAeroporto ")
         rows = cursor.fetchall()
         cursor.close()
         conn.close()
@@ -106,5 +106,5 @@ def GestisciLuogoAeroporti():
         print(f"Problemi di comunicazione con il server {e}"), 500
 
 if __name__=='__main__':
-    app.run(debug=True, host='0.0.0.0', port=5006)
+    app.run(port=5001)
 
