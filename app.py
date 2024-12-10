@@ -106,5 +106,5 @@ def GestisciLuogoAeroporti():
         print(f"Problemi di comunicazione con il server {e}"), 500
 
 if __name__=='__main__':
-    app.run(port=5001)
+    app.run(debug=True, port=5002)
 
