@@ -2,10 +2,14 @@ from flask import Flask, jsonify
 import sys  
 import psycopg2
 import urllib3
+from flask_cors import CORS
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 app = Flask(__name__)
+
+CORS(app)
+
 
 host = "localhost"
 port = "5432"
@@ -27,17 +31,6 @@ def dbconnect():
     except Exception as e:
         print(f"Errore durante la connessione al database: {e}")
         raise
-
-@app.route('/')
-def home():
-    return """
-    <h1> Benvenuto sul sito della nostra agenzia di viaggi!</h1>
-    <p> Voli disponibili : <a href='/api/voli'>clicca qui</a></p>
-    <p> Voli delle rispettive compagnie :<a href = '/api/compagnie_voli'>clicca qui</a></p>
-    <p> Aeroporti che effettuano voli :<a href = '/api/aeroporti'>clicca qui</a></p>
-    <p> Aeroporti di partenza e arrivo :<a href = '/api/aeroporti_arr_part'>clicca qui</a></p>
-    <p> Luogo degli aeroporti :<a href = '/api/luogo_aeroporti'>clicca qui</a></p>
-    """
 
 @app.route('/api/voli', methods=['GET'])
 def GestisciVoli():
