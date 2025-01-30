@@ -15,13 +15,11 @@ function App() {
   return (
     <>
     <Router>
-    <fieldset style={{backgroundColor:"white"}}>
-    <div className="team-table">
+    <div className='pageContainer'>
+    <header style={{ textAlign: 'center', backgroundColor: '#f8f8f8', padding: '20px' , position:'static'}}>
           <h1>Agenzia di viaggi</h1>
-            <fieldset style={{border:"2px solid black", paddingLeft:"10px", paddingTop:"20px", paddingRight:"10px",paddingBottom:"10px"}}>
-            <legend style={{textAlign:"center", width:"auto", padding:"0 10px", backgroundColor:"white",display:"inline-block"}}>Operazioni disponibili</legend>
-            <nav>
-              <ul>
+          <nav>
+              <ul className='navList'>
                 <li><Link to="/api/voli">Visualizza voli disponibili</Link></li>
                 <li><Link to="/api/compagnie_voli">Visualizza voli delle rispettive compagnie</Link></li>
                 <li><Link to="/api/aeroporti">Visualizza aeroporti che effettuano voli</Link></li>
@@ -29,7 +27,8 @@ function App() {
                 <li><Link to="/api/luogo_aeroporti">Visualizza luogo degli aeroporti</Link></li>
               </ul>
             </nav>
-            </fieldset>
+    </header>
+    <main style={{ flex: 1, padding: '20px', position:'static'}}>
           <Routes>
             <Route path="/api/voli" element={<Voli/>}></Route>
             <Route path="/api/compagnie_voli" element={<Compagnie/>}></Route>
@@ -37,8 +36,11 @@ function App() {
             <Route path="/api/aeroporti_arr_part" element={<Arr_Part/>}></Route>
             <Route path="/api/luogo_aeroporti" element={<LuogoAeroporti/>}></Route>
           </Routes>
+      </main>
+      <footer className='footerClass'>
+        <p>&copy; 2025 Agenzia di Viaggi. Tutti i diritti riservati.</p>
+      </footer>
       </div>
-      </fieldset>
       </Router>
     </>
   )
