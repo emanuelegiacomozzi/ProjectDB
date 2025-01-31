@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react';
+import './CompagnieTable.css'
 
 function Compagnie() {
   const [dati, setDati] = useState([]);
@@ -25,14 +26,11 @@ function Compagnie() {
 
   return (
     <div>
-      <h2>Voli delle rispettive compagnie</h2>
-      <table border="4">
+      <table className="compagnieTable">
         <thead>
           <tr>
             <th>Compagnia</th>
             <th>Anno di fondazione</th>
-            <th>Codice volo</th>
-            <th>Durata in minuti</th>
           </tr>
         </thead>
         <tbody>
@@ -40,8 +38,6 @@ function Compagnie() {
             <tr key={index}>
               <td>{item[0]}</td>
               <td>{item[1]}</td>
-              <td>{item[2]}</td>
-              <td>{item[4]}</td>
             </tr>
           ))}
         </tbody>

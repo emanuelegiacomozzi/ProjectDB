@@ -51,46 +51,21 @@ def GestisciCompagnieVoli():
     try:
         conn = dbconnect()
         cursor = conn.cursor()
-        cursor.execute("SELECT * FROM Compagnia c, Volo v WHERE c.nome = v.comp ")
+        cursor.execute("SELECT nome,annoFondaz FROM Compagnia ")
         rows = cursor.fetchall()
         cursor.close()
         conn.close()
         return jsonify(rows)
     except Exception as e:
         print(f"Problemi di comunicazione con il server {e}"), 500
+
 
 @app.route('/api/aeroporti', methods=['GET'])
-def GestisciAeroporti():
-    try:
-        conn = dbconnect()
-        cursor = conn.cursor()
-        cursor.execute("SELECT * FROM Aeroporto ")
-        rows = cursor.fetchall()
-        cursor.close()
-        conn.close()
-        return jsonify(rows)
-    except Exception as e:
-        print(f"Problemi di comunicazione con il server {e}"), 500
-
-@app.route('/api/aeroporti_arr_part', methods=['GET'])
 def GestisciAeroportiPartArr():
     try:
         conn = dbconnect()
         cursor = conn.cursor()
-        cursor.execute("SELECT * FROM ArrPart ")
-        rows = cursor.fetchall()
-        cursor.close()
-        conn.close()
-        return jsonify(rows)
-    except Exception as e:
-        print(f"Problemi di comunicazione con il server {e}"), 500
-
-@app.route('/api/luogo_aeroporti', methods=['GET'])
-def GestisciLuogoAeroporti():
-    try:
-        conn = dbconnect()
-        cursor = conn.cursor()
-        cursor.execute("SELECT * FROM LuogoAeroporto ")
+        cursor.execute("SELECT a.codice,a.nome,la.citta,la.nazione from LuogoAeroporto la, Aeroporto a where la.aeroporto = a.codice ")
         rows = cursor.fetchall()
         cursor.close()
         conn.close()

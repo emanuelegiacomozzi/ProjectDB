@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Welcome() {
+function Home() {
   return (
     <div style={{ textAlign: 'center', padding: '20px' }}>
       <h2>Benvenuti alla nostra agenzia di viaggi</h2>
@@ -9,4 +9,4 @@ function Welcome() {
   )
 }
 
-export default Welcome
+export default Home

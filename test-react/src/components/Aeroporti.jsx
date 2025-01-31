@@ -25,19 +25,22 @@ function Aeroporti() {
 
   return (
     <div>
-      <h2>Aeroporti che effettuano voli</h2>
       <table border="4">
         <thead>
           <tr>
-            <th>Codice Aeroporto</th>
             <th>Aeroporto</th>
+            <th>Codice</th>
+            <th>Città</th>
+            <th>Nazione</th>
           </tr>
         </thead>
         <tbody>
           {dati.map((item, index) => (
             <tr key={index}>
-              <td>{item[0]}</td>
               <td>{item[1]}</td>
+              <td>{item[0]}</td>
+              <td>{item[2]}</td>
+              <td>{item[3]}</td>
             </tr>
           ))}
         </tbody>
