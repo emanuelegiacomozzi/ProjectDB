@@ -1,0 +1,14 @@
+header{
+     text-align: center; 
+     background-color: #f8f8f8;
+     padding: 10px;
+     color:black;
+     width: 100%;
+     position: fixed;
+     top:0;
+     left:0;
+}
+
+.navLink {
+    margin-right: 15px; /* Aggiunge spazio a destra di ogni link */
+  }
