@@ -5,6 +5,7 @@ import Compagnie from './components/Compagnie'
 import Aeroporti from './components/Aeroporti'
 import Header from './components/Header'
 import Home from './components/Home'
+import Navbar from './components/Navbar'
 
 
 function App() {
@@ -14,16 +15,17 @@ function App() {
     <Router>
     <div className='pageContainer'>
     <Header/>
+    <Navbar/>
     <main className='mainApp'>
           <Routes>
-          <Route path="/" element={<Home />} /> 
+            <Route path="/" element={<Home />} /> 
             <Route path="/api/voli" element={<Voli/>}></Route>
             <Route path="/api/compagnie_voli" element={<Compagnie/>}></Route>
             <Route path="/api/aeroporti" element={<Aeroporti/>}></Route>
           </Routes>
       </main>
       <footer className='footerClass'>
-        <p>&copy; 2025 Agenzia di Viaggi. Tutti i diritti riservati.</p>
+        <p>&copy; 2025 Agenzia di Viaggi online. Tutti i diritti riservati.</p>
       </footer>
       </div>
       </Router>
