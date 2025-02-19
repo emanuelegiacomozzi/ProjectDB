@@ -1,5 +1,7 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react';
+import './Table.css'
+
 
 function Aeroporti() {
   const [dati, setDati] = useState([]);
@@ -25,7 +27,7 @@ function Aeroporti() {
 
   return (
     <div>
-      <table border="4">
+      <table className="Table">
         <thead>
           <tr>
             <th>Aeroporto</th>

@@ -1,5 +1,7 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react';
+import './Table.css'
+
 
 function Voli() {
   const [dati, setDati] = useState([]);
@@ -25,8 +27,7 @@ function Voli() {
 
   return (
     <div>
-      <h2>Voli Disponibili</h2>
-      <table border="4">
+      <table className="Table">
         <thead>
           <tr>
             <th>Codice Volo</th>

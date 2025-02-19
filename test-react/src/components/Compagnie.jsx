@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react';
-import './CompagnieTable.css'
+import './Table.css'
 
 function Compagnie() {
   const [dati, setDati] = useState([]);
@@ -26,7 +26,7 @@ function Compagnie() {
 
   return (
     <div>
-      <table className="compagnieTable">
+      <table className="Table">
         <thead>
           <tr>
             <th>Compagnia</th>

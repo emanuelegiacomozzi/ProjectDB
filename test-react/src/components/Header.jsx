@@ -10,11 +10,9 @@ function Header() {
         <h1 className="Agenzia">ViaggiaConNoi.it</h1>
         <img src={imgUrl} className="logo" />
       </div>
-      <nav className="navLinks">
-        <Link className="navLink" to="/api/voli">Voli</Link>
-        <Link className="navLink" to="/api/compagnie_voli">Compagnie</Link>
-        <Link className="navLink" to="/api/aeroporti">Aereoporti</Link>
-      </nav>
+      <nav>
+        <Link className="navLinks" to="/">Home Page</Link>
+        </nav>
     </header>
   )
 }
