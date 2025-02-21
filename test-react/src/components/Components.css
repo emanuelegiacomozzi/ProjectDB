@@ -10,12 +10,13 @@ header{
      display: flex;
      justify-content:space-evenly;
      align-items: center;
+     z-index: 1000;
 }
 
 .navbarContainer{
-     text-align: center; 
+     text-align:center; 
      background-color: rgb(78, 76, 76);
-     padding: 5px;
+     padding: 10px;
      color:white;
      width: 100%;
      position: fixed;
@@ -24,28 +25,99 @@ header{
      display: flex;
      justify-content:space-evenly;
      align-items: center;
+     z-index: 999;
 }
 
 .navLinks {
-    margin-right: 15px; /* Aggiunge spazio a destra di ogni link */
-    color: white; /* Colore del testo */
+    margin-right: 15px; 
+    color: white; 
+    text-decoration: none;
+    font-size:1.2em;
 }
+
+.navLinks:hover {
+     text-decoration: underline;
+   }
 
 .Agenzia{
      margin:0;
+     font-size:2.5em;
+     line-height:1.2;
 }
 
 .titleContainer {
      display:flex;
      align-items: center;
+     justify-content: center;
+     flex-wrap:wrap;
    }
-
-.tabella{
-     color:"balck";
-
-}
 
 .colore{
      color: black;
 }
 
+.logo {
+     height: 6em;
+     padding: 1.5em;
+     will-change: filter;
+     transition: filter 300ms;
+     max-width: 100%;
+   }
+
+   @media (max-width:768px){
+
+     .logo{
+          height:4em;
+          padding:1em;
+     }
+
+     .Agenzia{
+          font-size:1.8em;
+     }
+
+     header{
+          flex-direction:column;
+          text-align:center;
+     }
+
+     .titleContainer{
+          flex-direction: column;
+          align-items: center;
+          margin-bottom:10px;
+     }
+
+     .navbarContainer{
+          flex-direction:column;
+          top:180px;
+          text-align:center;
+     }
+
+     .navbarContainer .navLinks{
+          margin-right:0;
+          margin-bottom:10px;
+          font-size:1.2em;
+     }
+   }
+
+   @media (max-width: 480px) {
+     .logo{
+          height:3em;
+     }
+
+     .navbarContainer{
+          flex-direction:column;
+          top:160px;
+     }
+
+     .Agenzia{
+          font-size:1.5em;
+     }
+
+     .navbarContainer .navLinks{
+          font-size:1em;
+     }
+
+     .titleContainer{
+          margin-bottom:15px;
+     }
+   }

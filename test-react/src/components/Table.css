@@ -4,9 +4,10 @@
   margin: 20px 0;
   font-size: 18px;
   text-align: left;
+  margin-top: 70px;
 }
 
-.Table th, .cTable td {
+.Table th, .Table td {
   padding: 12px 15px;
   border: 1px solid #e8dfdf;
 }
@@ -26,4 +27,27 @@
 
 .Table td {
   color: #804b4b;
+}
+
+@media (max-width:768px){
+  .Table{
+    font-size:16px;
+    margin-top: auto;
+  }
+  
+  .Table th, .Table td{
+    padding:8px;
+  }
+
+}
+
+@media (max-width: 480px) {
+  .Table{
+    font-size:14px;
+    margin-top: 200px;
+  }
+
+  .Table th, .Table td{
+    padding: 6px;
+  }
 }

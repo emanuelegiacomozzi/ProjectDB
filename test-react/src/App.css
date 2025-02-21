@@ -13,21 +13,50 @@
 }
 
 body{
+  height:100%;
+  margin:0;
   background: white;
+  overflow-x:hidden; 
+  overflow-y:auto;
+  
 }
 
 .mainApp{
-  padding: 20px;
+  flex:1;
   margin-top: 60px;
   width: 100%;
+  padding:20px;
+  overflow-y:auto;
 }
 
 footer{
+  text-align: center;
   background-color: black;
   color:white;
-  padding: 10px;
+  padding: 20px;
   width: 100%; 
   position: fixed;
   bottom: 0;
   left: 0 ;
+  z-index:1000;
+  overflow-y:auto;
+}
+
+@media (max-width:768px){
+
+  footer{
+    font-size:14px;
+    padding:8px;
+  }
+
+  .mainApp{
+    padding:10px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  footer{
+    font-size:12px;
+  }
 }
