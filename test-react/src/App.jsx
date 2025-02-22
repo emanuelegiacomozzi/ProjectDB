@@ -11,9 +11,7 @@ import Navbar from './components/Navbar'
 function App() {
 
   return (
-    <>
     <Router>
-    <div className='pageContainer'>
     <Header/>
     <Navbar/>
     <main className='mainApp'>
@@ -27,9 +25,7 @@ function App() {
       <footer className='footerClass'>
         <p>&copy; 2025 Agenzia di Viaggi online. Tutti i diritti riservati.</p>
       </footer>
-      </div>
       </Router>
-    </>
   )
 }
 

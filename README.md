@@ -15,20 +15,23 @@
    # Home Page: pagina principale dell'applicazione che offre una breve introduzione dell'agenzia di viaggi con un messaggio di benvenuto.
 
 # 3.Interazione con l'API
-   # L'applicazione si connette ad i vari servizi rest presenti nel backend app.py per recuperare i dati, i quali vengono recuperati in modo asincrono utilizzando axios, un client http, e vengono visualizzati in tabelle.
+   # L'applicazione interagisce con l'API REST del backend app.py per il recupero dei dati. Le richieste ai servizi vengono effettuate in modo asincrono utilizzando Axios, un client HTTP. I dati ottenuti vengono poi gestiti nei file Voli, Compagnie e Aeroporti e visualizzati in tabelle. Il backend è ospitato localmente, con indirizzo IP localhost e porta 5002.
 
 
 # Istruzioni per utilizzare l'applicazione
 
-# git clone https://github.com/emanuelegiacomozzi/ProjectDB.git (clona repository)
-# cd <directory> (sposta nella directory dove è stata clonata la repository)
-# cd ProjectDB (sposta nella repository clonata contentente app.py e l'applicazione)
-# npm install (installa le dipendenze)
-# Node -v , Npm -v (verifica le versioni di node e npm)
-# python (o python3 a seconda della versione) app.py(per runnare il server)
-# se non sono riconosciute le seguenti librerie , installare : 
-# pip intall Flask
-# pip install psycopg2
-# pip install flask-cors
-# cd test-react(sposta nella directory contenente l'applicazione in react)
-# npm run dev (per avviare l'applicazione)
+# aprire il terminale 
+   # git clone https://github.com/emanuelegiacomozzi/ProjectDB.git (clona repository)
+   # cd <directory> (sposta nella directory dove è stata clonata la repository)
+   # cd ProjectDB (sposta nella repository clonata contentente app.py e l'applicazione test-react)
+   # npm install (installa le dipendenze)
+   # Node -v , Npm -v (verifica le versioni di node e npm)  
+# aprire il terminale in vscode
+   # python (o python3 a seconda della versione) app.py(per runnare il server)
+   # se non sono riconosciute le seguenti librerie , installare : 
+   # pip intall Flask
+   # pip install psycopg2
+   # pip install flask-cors
+# aprire un secondo terminale in vscode:
+   # cd test-react(sposta nella directory contenente l'applicazione in react)
+   # npm run dev (per avviare l'applicazione)
