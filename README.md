@@ -22,7 +22,6 @@
 
 # aprire il terminale 
    # git clone https://github.com/emanuelegiacomozzi/ProjectDB.git (clona repository)
-   # cd <directory> (sposta nella directory dove è stata clonata la repository)
    # cd ProjectDB (sposta nella repository clonata contentente app.py e l'applicazione test-react)
    # npm install (installa le dipendenze)
    # Node -v , Npm -v (verifica le versioni di node e npm)  
